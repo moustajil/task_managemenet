@@ -18,16 +18,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   final List<Map<String, String>> onboardingData = [
     {
-      "title": "Welcome to GrowTask 🌿",
-      "desc": "Stay organized and manage your daily tasks easily in a calm environment."
+      "title": "Plan Your Journey 📝",
+      "desc":
+          "Organize your tasks and create a clear roadmap for what you want to achieve.",
     },
     {
-      "title": "Focus & Grow 🌱",
-      "desc": "Set clear goals and track your progress as you grow every day."
+      "title": "Process & Set Goals 🎯",
+      "desc":
+          "Break down tasks, track your progress, and stay focused on reaching your goals.",
     },
     {
-      "title": "Achieve Balance 🍃",
-      "desc": "Find harmony between productivity and well-being. Let’s begin your journey!"
+      "title": "Win & Celebrate 🏆",
+      "desc":
+          "Complete your tasks efficiently and enjoy the satisfaction of achieving your goals!",
     },
   ];
 
@@ -51,7 +54,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   duration: const Duration(milliseconds: 400),
                   child: OnboardingPage(
                     key: ValueKey(index),
-                    image: "assets/images/s${index+1}.png",
+                    image: "assets/images/s${index + 1}.png",
                     title: data["title"]!,
                     description: data["desc"]!,
                   ),
@@ -82,17 +85,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 14,
+                  ),
                 ),
                 onPressed: () {
                   if (isLastPage) {
-                    Get.offAll(() => const LanguageScreen(),
-                        transition: Transition.fadeIn);
+                    Get.offAll(
+                      () => const LanguageScreen(),
+                      transition: Transition.fadeIn,
+                    );
                   } else {
                     _controller.nextPage(
-                        duration: const Duration(milliseconds: 500),
-                        curve: Curves.easeInOut);
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeInOut,
+                    );
                   }
                 },
                 child: Text(isLastPage ? "Get Started" : "Next"),

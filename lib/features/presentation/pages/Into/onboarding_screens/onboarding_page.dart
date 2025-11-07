@@ -21,17 +21,22 @@ class OnboardingPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // Animated circular background with image
           AnimatedContainer(
             duration: const Duration(seconds: 1),
             curve: Curves.easeInOut,
-            height: 220,
-            width: 220,
+        
             decoration: BoxDecoration(
-              color: AppColors.primary.withOpacity(0.2),
+              color: AppColors.primary.withOpacity(0.1),
               shape: BoxShape.circle,
             ),
             child: Center(
-              child: Icon(Icons.eco, color: AppColors.primary, size: 100),
+              child: Image.asset(
+                image, // Image passed from OnboardingScreen
+                fit: BoxFit.contain,
+                height: 300,
+                width: 300,
+              ),
             ),
           ),
           const SizedBox(height: 40),
