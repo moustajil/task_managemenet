@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:taskmanagenet/core/constants/app_colors.dart';
-import 'package:taskmanagenet/features/presentation/pages/Into/onboarding_screens/screen_one.dart';
+import 'package:taskmanagenet/features/presentation/pages/Into/onboarding_screens/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     // Navigate after 3 seconds
     Timer(const Duration(seconds: 3), () {
-      Get.offAll(() =>  ScreenOne(),
+      Get.offAll(() =>  OnboardingScreen(),
           transition: Transition.fadeIn, duration: const Duration(seconds: 1));
     });
   }
