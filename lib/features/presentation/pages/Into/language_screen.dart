@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:taskmanagenet/core/constants/app_colors.dart';
+import 'package:taskmanagenet/features/presentation/pages/auth/regester_screen.dart';
 
 class LanguageScreen extends StatefulWidget {
   const LanguageScreen({super.key});
@@ -118,9 +121,10 @@ class _LanguageScreenState extends State<LanguageScreen> {
                     ),
                     onPressed: () {
                       // Navigate to next screen
-                      ScaffoldMessenger.of(context).showSnackBar(
+                      /*ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(content: Text('Selected: $selectedLanguage')),
-                      );
+                      );*/
+                      Get.offAll(UserInfoScreen());
                     },
                     child: const Text(
                       'Continue',
