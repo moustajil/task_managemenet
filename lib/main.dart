@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Nature Calm App',
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
-      themeMode: ThemeMode.system, 
+      themeMode: ThemeMode.system,
       home: SplashScreen(),
     );
   }
