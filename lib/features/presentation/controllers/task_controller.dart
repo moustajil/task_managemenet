@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:taskmanagenet/features/domain/usecases/delet_task.dart';
-import 'package:taskmanagenet/features/domain/usecases/get_all_task.dart';
+import 'package:taskmanagenet/features/domain/usecases/task_use_case/delet_task.dart';
+import 'package:taskmanagenet/features/domain/usecases/task_use_case/get_all_task.dart';
 import '../../domain/entities/task_entity.dart';
-import '../../domain/usecases/add_task.dart';
-import '../../domain/usecases/update_task.dart';
+import '../../domain/usecases/task_use_case/add_task.dart';
+import '../../domain/usecases/task_use_case/update_task.dart';
 
 class TaskController extends GetxController {
   final GetAllTasks getAllTasks;

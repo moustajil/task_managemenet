@@ -1,4 +1,4 @@
-import '../repositories/task_repository.dart';
+import '../../repositories/task_repository.dart';
 
 class DeleteTask {
   final TaskRepository repository;

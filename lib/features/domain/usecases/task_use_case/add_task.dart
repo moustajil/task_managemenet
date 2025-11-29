@@ -1,5 +1,5 @@
-import '../entities/task_entity.dart';
-import '../repositories/task_repository.dart';
+import '../../entities/task_entity.dart';
+import '../../repositories/task_repository.dart';
 
 class AddTask {
   final TaskRepository repository;
