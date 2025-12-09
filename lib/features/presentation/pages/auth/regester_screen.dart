@@ -1,7 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:taskmanagenet/core/constants/app_colors.dart';
+import 'package:taskmanagenet/features/presentation/pages/auth/login_screen.dart';
 
 class UserInfoScreen extends StatefulWidget {
   const UserInfoScreen({super.key});
@@ -27,9 +30,10 @@ class _UserInfoScreenState extends State<UserInfoScreen>
   @override
   void initState() {
     super.initState();
-    _controller =
-        AnimationController(vsync: this, duration: const Duration(seconds: 6))
-          ..repeat(reverse: true);
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 6),
+    )..repeat(reverse: true);
     _animation = CurvedAnimation(parent: _controller, curve: Curves.easeInOut);
   }
 
@@ -58,7 +62,7 @@ class _UserInfoScreenState extends State<UserInfoScreen>
       setState(() {
         _selectedDate = picked;
         _birthDateController.text =
-            "${picked.day.toString().padLeft(2,'0')}-${picked.month.toString().padLeft(2,'0')}-${picked.year}";
+            "${picked.day.toString().padLeft(2, '0')}-${picked.month.toString().padLeft(2, '0')}-${picked.year}";
       });
     }
   }
@@ -75,13 +79,15 @@ class _UserInfoScreenState extends State<UserInfoScreen>
         _image == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-            content: Text('Please fill all fields and select an image')),
+          content: Text('Please fill all fields and select an image'),
+        ),
       );
       return;
     }
 
-    ScaffoldMessenger.of(context)
-        .showSnackBar(const SnackBar(content: Text('User info saved!')));
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(const SnackBar(content: Text('User info saved!')));
   }
 
   @override
@@ -122,11 +128,15 @@ class _UserInfoScreenState extends State<UserInfoScreen>
                       CircleAvatar(
                         radius: 70,
                         backgroundColor: AppColors.secondary,
-                        backgroundImage:
-                            _image != null ? FileImage(_image!) : null,
+                        backgroundImage: _image != null
+                            ? FileImage(_image!)
+                            : null,
                         child: _image == null
-                            ? const Icon(Icons.person,
-                                size: 70, color: AppColors.primary)
+                            ? const Icon(
+                                Icons.person,
+                                size: 70,
+                                color: AppColors.primary,
+                              )
                             : null,
                       ),
                       Positioned(
@@ -141,17 +151,27 @@ class _UserInfoScreenState extends State<UserInfoScreen>
                               border: Border.all(color: Colors.white, width: 2),
                             ),
                             padding: const EdgeInsets.all(8),
-                            child: const Icon(Icons.camera_alt, color: Colors.white),
+                            child: const Icon(
+                              Icons.camera_alt,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
                     ],
                   ),
                   const SizedBox(height: 32),
-                  _buildTextField(_firstNameController, 'First Name', Icons.person),
+                  _buildTextField(
+                    _firstNameController,
+                    'First Name',
+                    Icons.person,
+                  ),
                   const SizedBox(height: 16),
                   _buildTextField(
-                      _lastNameController, 'Last Name', Icons.person_outline),
+                    _lastNameController,
+                    'Last Name',
+                    Icons.person_outline,
+                  ),
                   const SizedBox(height: 16),
 
                   // Birthdate field
@@ -165,8 +185,9 @@ class _UserInfoScreenState extends State<UserInfoScreen>
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(16),
-                          borderSide: BorderSide.none),
+                        borderRadius: BorderRadius.circular(16),
+                        borderSide: BorderSide.none,
+                      ),
                       suffixIcon: const Icon(Icons.calendar_today),
                     ),
                   ),
@@ -199,12 +220,35 @@ class _UserInfoScreenState extends State<UserInfoScreen>
                       style: ElevatedButton.styleFrom(
                         backgroundColor: AppColors.primary,
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16)),
+                          borderRadius: BorderRadius.circular(16),
+                        ),
                         elevation: 4,
                       ),
-                      child:
-                          const Text('Save', style: TextStyle(fontSize: 18)),
+                      child: const Text('Save', style: TextStyle(fontSize: 18)),
                     ),
+                  ),
+                  const SizedBox(height: 32),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Do you have an account? ",
+                        style: TextStyle(color:Color.fromARGB(255, 68, 52, 52)),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Get.off(LoginScreen());
+                        },
+                        child: Text(
+                          'Login',
+                          style: TextStyle(
+                            color: AppColors.primary,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -215,8 +259,11 @@ class _UserInfoScreenState extends State<UserInfoScreen>
     );
   }
 
-  Widget _buildTextField(TextEditingController controller, String label,
-      IconData icon) {
+  Widget _buildTextField(
+    TextEditingController controller,
+    String label,
+    IconData icon,
+  ) {
     return TextField(
       controller: controller,
       decoration: InputDecoration(
@@ -225,7 +272,9 @@ class _UserInfoScreenState extends State<UserInfoScreen>
         filled: true,
         fillColor: Colors.white,
         border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16), borderSide: BorderSide.none),
+          borderRadius: BorderRadius.circular(16),
+          borderSide: BorderSide.none,
+        ),
       ),
     );
   }
@@ -243,7 +292,13 @@ class _UserInfoScreenState extends State<UserInfoScreen>
             borderRadius: BorderRadius.circular(12),
             border: Border.all(color: AppColors.primary),
             boxShadow: isSelected
-                ? [BoxShadow(color: Colors.black26, blurRadius: 4, offset: Offset(0,2))]
+                ? [
+                    BoxShadow(
+                      color: Colors.black26,
+                      blurRadius: 4,
+                      offset: Offset(0, 2),
+                    ),
+                  ]
                 : [],
           ),
           child: Row(
@@ -254,8 +309,9 @@ class _UserInfoScreenState extends State<UserInfoScreen>
               Text(
                 gender,
                 style: TextStyle(
-                    color: isSelected ? Colors.white : AppColors.text,
-                    fontWeight: FontWeight.bold),
+                  color: isSelected ? Colors.white : AppColors.text,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
