@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Favoritestab extends StatefulWidget {
-  const Favoritestab({super.key});
+class GolasTAp extends StatefulWidget {
+  const GolasTAp({super.key});
 
   @override
-  State<Favoritestab> createState() => _FavoritestabState();
+  State<GolasTAp> createState() => _FavoritestabState();
 }
 
-class _FavoritestabState extends State<Favoritestab> {
+class _FavoritestabState extends State<GolasTAp> {
   @override
   Widget build(BuildContext context) {
     return const Center(

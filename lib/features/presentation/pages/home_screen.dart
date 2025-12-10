@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
    List<Widget> screens =  [
     HomeTab(),
     Searchtab(),
-    Favoritestab(),
+    GolasTAp(),
     Profiletab(),
   ];
 
