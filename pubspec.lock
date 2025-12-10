@@ -113,6 +113,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
+  date_format:
+    dependency: "direct main"
+    description:
+      name: date_format
+      sha256: a48254e60bdb7f1d5a15cac7f86e37491808056c0a99dbdc850841def4754ddc
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.9"
+  easy_date_timeline:
+    dependency: "direct main"
+    description:
+      name: easy_date_timeline
+      sha256: "0fb8fe360d78b7ccb409da9de0e8a71e8e06f0e8a60ea6c54dabf830479309b2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.9"
   fake_async:
     dependency: transitive
     description:
@@ -254,6 +270,19 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.0.0"
+  flutter_localizations:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
+  flutter_masonry_view:
+    dependency: "direct main"
+    description:
+      name: flutter_masonry_view
+      sha256: b729d28c07f9d5b2011535c8823e72772247b0746fa37b0e1cabaa0ef2e9dbc0
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.2"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -294,6 +323,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "9.28.0"
+  flutter_staggered_grid_view:
+    dependency: "direct main"
+    description:
+      name: flutter_staggered_grid_view
+      sha256: "19e7abb550c96fbfeb546b23f3ff356ee7c59a019a651f8f102a4ba9b7349395"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.7.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -400,6 +437,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.2"
+  intl:
+    dependency: "direct main"
+    description:
+      name: intl
+      sha256: "3df61194eb431efc39c4ceba583b95633a403f46c9fd341e550ce0bfa50e9aa5"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.20.2"
   leak_tracker:
     dependency: transitive
     description:
@@ -440,6 +485,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.6.2"
+  masonry_grid:
+    dependency: "direct main"
+    description:
+      name: masonry_grid
+      sha256: ad080dae535106117d7ba70ef34882a95de0da06f113a1e3e80cfbd300e81979
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   matcher:
     dependency: transitive
     description:
